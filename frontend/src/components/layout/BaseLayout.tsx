@@ -1,7 +1,7 @@
 import React from 'react';
 import { Outlet, Link, useNavigate } from 'react-router-dom';
 import { useAuthStore } from '../../store/authStore';
-import { LogOut, Home, Users, BookOpen, CheckSquare } from 'lucide-react';
+import { LogOut, Home, Users, BookOpen, CheckSquare, Sparkles } from 'lucide-react';
 
 export default function BaseLayout() {
   const { user, logout } = useAuthStore();
@@ -39,6 +39,10 @@ export default function BaseLayout() {
           <Link to="/attendance" className="flex items-center space-x-2 p-2 rounded-md hover:bg-gray-100 text-gray-700">
             <CheckSquare className="w-5 h-5" />
             <span>Attendance</span>
+          </Link>
+          <Link to="/ai-planner" className="flex items-center space-x-2 p-2 rounded-md hover:bg-blue-50 text-blue-700 font-medium">
+            <Sparkles className="w-5 h-5" />
+            <span>AI Curriculum Planner</span>
           </Link>
         </nav>
       </aside>

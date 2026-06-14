@@ -11,6 +11,7 @@ import Courses from './pages/Courses';
 import StaffPage from './pages/Staff';
 import StudentsPage from './pages/Students';
 import AttendancePage from './pages/Attendance';
+import LessonPlanner from './pages/LessonPlanner';
 
 const queryClient = new QueryClient();
 
@@ -46,6 +47,7 @@ function App() {
             <Route path="staff" element={<StaffPage />} />
             <Route path="courses" element={<Courses />} />
             <Route path="attendance" element={<AttendancePage />} />
+            <Route path="ai-planner" element={<LessonPlanner />} />
           </Route>
         </Routes>
       </BrowserRouter>

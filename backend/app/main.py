@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from app.core.config import settings
-from app.api.routes import auth, school, staff, student, attendance, exam, report
+from app.api.routes import auth, school, staff, student, attendance, exam, report, ai
 
 app = FastAPI(
     title=settings.PROJECT_NAME,
@@ -24,6 +24,7 @@ app.include_router(student.router, prefix=f"{settings.API_V1_STR}/student", tags
 app.include_router(attendance.router, prefix=f"{settings.API_V1_STR}/attendance", tags=["attendance"])
 app.include_router(exam.router, prefix=f"{settings.API_V1_STR}/exam", tags=["exam"])
 app.include_router(report.router, prefix=f"{settings.API_V1_STR}/report", tags=["report"])
+app.include_router(ai.router, prefix=f"{settings.API_V1_STR}/ai", tags=["ai"])
 
 @app.get("/health")
 def health_check():
